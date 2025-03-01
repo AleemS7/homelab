@@ -16,48 +16,46 @@ This document explains how I installed and configured [Pi-hole](https://pi-hole.
 1. **Reserve IP for Pi-hole**  
    In my router’s DHCP settings, I assigned a **static IP** or “DHCP reservation” to the Pi:
 
-   ![IP Allocation for Pi-hole](/images/1.png)
+   ![IP Allocation for Pi-hole](/images/2.png)
 
 2. **Run Pi-hole Installer**  
-   After flashing Ubuntu onto the Pi and updating packages, I used Pi-hole’s official install script. At the end, Pi-hole displays the final IP and admin password:
-
-   ![Pi-hole Installation Complete](/images/2.png)
+   After flashing Ubuntu onto the Pi and updating packages, I used Pi-hole’s official install script. At the end, Pi-hole displays the final IP and admin password
 
 3. **Access the Dashboard**  
    Once installed, Pi-hole provides a web interface (default: `http://<Pi-IP>/admin`):
 
-   ![Pi-hole Dashboard (initial)](/images/3.png)
+   ![Pi-hole Dashboard (initial)](/images/4.png)
 
    Over time, queries and block rates appear here:
 
-   ![Pi-hole Dashboard with Queries](/images/8.png)
+   ![Pi-hole Dashboard with Queries](/images/9.png)
 
 4. **Router DNS Challenges**  
    My AT&T router wouldn’t let me globally set the Pi-hole IP as DNS, displaying a “Page not found” error:
 
-   ![AT&T Router Limitation](/images/4.png)
+   ![AT&T Router Limitation](/images/5.png)
 
    So I manually configured DNS on individual devices instead.
 
 5. **Testing & Validation**  
    - On Windows, I set **Preferred DNS** to Pi-hole’s IP:
 
-     ![Windows DNS Settings](/images/5.png)
+     ![Windows DNS Settings](/images/6.png)
 
    - Flushed DNS cache:
 
-     ![ipconfig /flushdns](/images/6.png)
+     ![ipconfig /flushdns](/images/7.png)
 
    - Verified ad-blocking with `nslookup`:
 
-     ![nslookup flurry.com => 0.0.0.0](/images/7.png)
+     ![nslookup flurry.com => 0.0.0.0](/images/8.png)
 
 ## Challenges & Troubleshooting
 
 - **Static IP**  
   Pi-hole strongly recommends a static IP. During setup, Pi-hole even warns:
 
-  ![Pi-hole Static IP Needed](/images/10.png)
+  ![Pi-hole Static IP Needed](/images/1.png)
 
 - **Router Limitations**  
   Couldn’t globally set Pi-hole as DNS, so each client was manually pointed to `192.168.1.x`.

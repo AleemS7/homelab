@@ -15,34 +15,35 @@ This document outlines how I set up and troubleshot OpenSSH on my Windows Server
 
 1. **Install OpenSSH**  
    - Attempted the built-in feature:
+    This is where i ran into issues on the Azure VM because the VM wasn't
+    powerful enough to even ssh and I didn't want to sacrifice the GUI so I opted to continue the setup with windows server instead
 
-     ![Add Roles and Features Wizard (OpenSSH attempt)](/images/11.png)
+     ![Add Roles and Features Wizard (OpenSSH attempt)](/images/18.png)
 
-   - If memory errors occurred, I switched to the GitHub approach.
+2. **Check the sshd Service** 
+   ![Get-Service sshd => Running](/images/25.png)
 
-2. **Check the sshd Service**  
-   ![Get-Service sshd => Running](/images/21.png)
-
-3. **Create Firewall Rule**  
-   ![New-NetFirewallRule -Name OpenSSH](/images/22.png)
+3. **Create Firewall Rule**
+   ![add rule](/images/19.png)
+   ![New-NetFirewallRule -Name OpenSSH](/images/26.png)
 
 4. **Testing & Python Setup**  
    - Verified Python installation:
 
-     ![python --version => 3.13.2](/images/24.png)
+     ![python --version => 3.13.2](/images/28.png)
 
    - Created a simple Python server on Windows:
 
-     ![server.py listening on 0.0.0.0:5000](/images/25.png)
+     ![server.py listening on 0.0.0.0:5000](/images/29.png)
 
 ## Challenges & Troubleshooting
 
 - **Parameter Not Found**  
-  ![Port param error](/images/14.png)
+  ![Port param error](/images/19.png)
 
   On some Windows builds, `-LocalPort` must be used instead of `-Port`.
 - **Connection Refused**  
-  ![SSH Connection Refused from Pi](/images/30.png)
+  ![SSH Connection Refused from Pi](/images/24.png)
 
   Typically caused by missing firewall rules or local security policy blocking Administrator.
 

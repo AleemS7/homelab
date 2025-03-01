@@ -12,25 +12,27 @@ This document covers my experience integrating Azure into my homelab environment
 ## Steps & Highlights
 
 1. **Creating the VM in Azure**  
-   ![Azure Create VM settings](/images/19.png)
+   ![Azure Create VM settings](/images/13.png)
 
    I chose **B1s** for cost efficiency, set Region to `East US 2`, and used Windows Server 2022.
 
 2. **Finding the Public IP**  
-   ![az vm show public IP](/images/20.png)
+   ![az vm show public IP](/images/14.png)
 
    This IP let me RDP or SSH (if I installed OpenSSH) into the VM.
 
 3. **WSL DNS Issues**  
    Initially, `az login` failed with “temporary failure in name resolution”:
 
-   ![WSL DNS error / resolv.conf fix](/images/9.png)
+   ![WSL DNS error / resolv.conf fix](/images/10.png)
 
    I had to override `/etc/resolv.conf`:
 
-   ![WSL resolv.conf override](/images/17.png)
+   ![WSL resolv.conf override](/images/11.png)
 
-   After pointing to a public DNS (like `8.8.8.8`), `az login` worked.
+   I also realized there was a problem with the Pi-hole blocking Microsoft.
+   After pointing to a public DNS (like `1.1.1.1`), `az login` worked.
+   
 
 ## Challenges & Troubleshooting
 

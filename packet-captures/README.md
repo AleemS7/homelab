@@ -26,7 +26,7 @@ This directory contains `.pcap` files and documentation related to capturing and
 3. **Python Server & Client**  
    - On Windows, I ran `server.py`:
 
-     ![server.py listening on 0.0.0.0:5000](/images/31.png)
+     ![server.py listening on 0.0.0.0:5000](/images/30.png)
 
    - On the Pi, `client.py` sends messages:
 

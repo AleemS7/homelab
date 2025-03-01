@@ -19,21 +19,21 @@ This file outlines the core networking components of my homelab, including how I
 - **VMware Network Editor**  
   I set my Windows VM to “Bridged” so it would get an IP from the same subnet as the Pi:
 
-  ![VMware Virtual Network Editor](/images/27.png)
+  ![VMware Virtual Network Editor](/images/21.png)
 
 - **Avoiding APIPA**  
   At times, the Windows VM defaulted to `169.254.x.x`:
 
-  ![APIPA / General Failure](/images/16.png)
+  ![APIPA / General Failure](/images/20.png)
 
   To fix this, I ensured the VM’s adapter was truly bridged and sometimes assigned a static IP if DHCP didn’t work.
 
 - **Testing Connectivity**  
   Once bridging worked, I could ping the VM from the Pi and vice versa:
 
-  ![Pi pinging 192.168.1.254](/images/28.png)
+  ![Pi pinging 192.168.1.254](/images/22.png)
 
-  ![Windows pinging 192.168.1.64](/images/29.png)
+  ![Windows pinging 192.168.1.64](/images/23.png)
 
 ## Challenges & Troubleshooting
 
