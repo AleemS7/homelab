@@ -39,7 +39,7 @@ This document covers my experience integrating Azure into my homelab environment
 - **NSG vs. Windows Firewall**  
   Needed to allow inbound RDP or SSH in both the **Network Security Group** and the VM’s firewall.  
 - **Minimal VM Size**  
-  B1s can be laggy for Windows; sometimes I used Linux or upscaled to B2s.  
+  B1s can be laggy for Windows; I upscaled to B2s.  
 
 ## Lessons Learned
 
